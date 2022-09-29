@@ -12,6 +12,7 @@ func main() {
 	fmt.Println("test")
 	fmt.Println("test2")
 	fmt.Println("master")
+	fmt.Println("master2")
 	//however, the variable is not accessible outside of the functions.
 	//fmt.Println(age) returns no variable found
 }
