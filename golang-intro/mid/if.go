@@ -11,7 +11,6 @@ func main() {
 	}
 	fmt.Println("test")
 	fmt.Println("test2")
-	fmt.Println("test_brian")
 	fmt.Println("master")
 	fmt.Println("master2")
 	//however, the variable is not accessible outside of the functions.
