@@ -17,5 +17,6 @@ func main() {
 	fmt.Println(len(person))
 	book := make(map[string]string)
 	book["title"] = "good ridance"
+	book["title"] = "replaced"
 	fmt.Println(book)
 }
