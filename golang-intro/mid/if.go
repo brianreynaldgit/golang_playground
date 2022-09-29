@@ -9,10 +9,10 @@ func main() {
 	} else {
 		fmt.Println("hahihuheho")
 	}
-	fmt.Println("test")
-	fmt.Println("test2")
-	fmt.Println("master_new")
-	fmt.Println("master2")
 	//however, the variable is not accessible outside of the functions.
 	//fmt.Println(age) returns no variable found
+}
+
+func master() {
+	fmt.Println("master")
 }
