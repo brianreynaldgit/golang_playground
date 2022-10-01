@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "github.com/brianreynaldgit/golang_playground";
+option go_package = "github.com/brianreynaldgit/golang_playground/grpc/calculator";
 
 service Calculator {
     rpc SumMethod1(CalcInputs1) returns (CalcOutput) {}

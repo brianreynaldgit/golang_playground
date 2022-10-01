@@ -4,7 +4,7 @@
 // - protoc             v3.21.7
 // source: calc.proto
 
-package golang_playground
+package calculator
 
 import (
 	context "context"
