@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/brianreynaldgit/golang_playground";
+
+service Calculator {
+    rpc SumMethod1(CalcInputs1) returns (CalcOutput) {}
+    rpc SumMethod2(CalcInputs2) returns (CalcOutput) {}
+ }
+
+ message CalcInputs1 {
+    int32 A = 1;
+    int32 B = 2;
+ }
+ message CalcInputs2 {
+    repeated int32 inputs = 1;
+ }
+ message CalcOutput {
+    int32 out = 1;
+ }
