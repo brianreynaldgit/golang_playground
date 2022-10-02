@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"flag"
 	"fmt"
 	"log"
 	"net"
@@ -14,26 +15,29 @@ type server struct {
 	pb.UnimplementedCalculatorServer
 }
 
+var (
+	port = flag.Int("port", 50051, "The server port")
+)
+
 func (s *server) SumMethod1(ctx context.Context, in *pb.CalcInputs1) (*pb.CalcOutput, error) {
-	var output *pb.CalcOutput
+	sum := in.A + in.B
+	out := &pb.CalcOutput{Out: sum}
 
-	output.Out = in.A + in.B
-
-	return output, nil
+	return out, nil
 }
 
 func (s *server) SumMethod2(ctx context.Context, in *pb.CalcInputs2) (*pb.CalcOutput, error) {
-	var output *pb.CalcOutput
-
+	var sum int32
 	for _, data := range in.Inputs {
-		output.Out += data
+		sum += data
 	}
+	out := &pb.CalcOutput{Out: sum}
 
-	return output, nil
+	return out, nil
 }
 
 func main() {
-	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", 50051))
+	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", *port))
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
