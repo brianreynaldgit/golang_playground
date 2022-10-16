@@ -8,10 +8,12 @@ import (
 	"github.com/gomodule/redigo/redis"
 )
 
+//make sure to install redis on docker locally using :
+// docker run --name local-redis -p 6379:6379 -d redis
 func InitPool() *redis.Pool {
 	return &redis.Pool{
-		MaxIdle:   50,
-		MaxActive: 10000,
+		MaxIdle:   0,
+		MaxActive: 1,
 		Dial: func() (redis.Conn, error) {
 			conn, err := redis.Dial("tcp", "localhost:6379")
 
